@@ -1,4 +1,5 @@
 Training procces is in training/model.ipynb 
+
 To recreate, just run the notebook.
 to have all the libraries run:
 `pip install -r requirements.txt`
