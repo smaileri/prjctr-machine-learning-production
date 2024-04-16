@@ -16,6 +16,11 @@ with open('model/gb_model.pkl', 'rb') as f:
 app = FastAPI()
 
 
+@app.get("/")
+async def basic():
+    return {"text": "Send a POST request to get a prediction"}
+
+
 @app.post("/predict")
 async def predict(request: Request):
     body = await request.body()
@@ -26,4 +31,4 @@ async def predict(request: Request):
     return {"prediction": prediction}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80)
